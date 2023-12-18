@@ -1,0 +1,11 @@
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/bin/Debug/net8.0/UltimateBreakfast.Contracts.deps.json
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/bin/Debug/net8.0/UltimateBreakfast.Contracts.dll
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/bin/Debug/net8.0/UltimateBreakfast.Contracts.pdb
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.AssemblyInfoInputs.cache
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.AssemblyInfo.cs
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.csproj.CoreCompileInputs.cache
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.dll
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/refint/UltimateBreakfast.Contracts.dll
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.pdb
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/ref/UltimateBreakfast.Contracts.dll
