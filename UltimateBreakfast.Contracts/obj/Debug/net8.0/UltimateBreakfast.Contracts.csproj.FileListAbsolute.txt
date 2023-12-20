@@ -9,3 +9,4 @@
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/refint/UltimateBreakfast.Contracts.dll
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.pdb
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/ref/UltimateBreakfast.Contracts.dll
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast.Contracts/obj/Debug/net8.0/UltimateBreakfast.Contracts.sourcelink.json

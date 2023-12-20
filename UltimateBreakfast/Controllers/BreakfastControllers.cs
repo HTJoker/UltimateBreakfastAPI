@@ -1,22 +1,62 @@
 using Microsoft.AspNetCore.Mvc;
 using UltimateBreakfast.Contracts.Breakfast;
+using UltimateBreakfast.Models;
+using UltimateBreakfast.Services.Breakfasts;
 
 namespace UltimateBreakfast.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class BreakfastController : ControllerBase
+public class BreakfastController(IBreakfastService breakfastService) : ControllerBase
 {
+  private readonly IBreakfastService _breakfastService = breakfastService;
+
   [HttpPost()]
   public IActionResult CreateBreakfast(CreateBreakfastRequest request)
   {
-    return Ok(request);
+    var breakfast = new Breakfast(
+      Guid.NewGuid(),
+      request.Name,
+      request.Description,
+      request.StartDate,
+      request.EndDate,
+      DateTime.UtcNow,
+      request.Savory,
+      request.Sweet
+    );
+
+    _breakfastService.CreateBreakfast(breakfast);
+
+    var response = new BreakfastResponse(
+      breakfast.Id,
+      breakfast.Name,
+      breakfast.Description,
+      breakfast.StartDate,
+      breakfast.EndDate,
+      breakfast.LastUpdated,
+      breakfast.Savory,
+      breakfast.Sweet
+    );
+    return CreatedAtAction(nameof(GetBreakfast), new { id = breakfast.Id }, response);
   }
 
   [HttpGet("{id:guid}")]
   public IActionResult GetBreakfast(Guid id)
   {
-    return Ok(id);
+    Breakfast breakfast = _breakfastService.GetBreakfast(id);
+
+    var response = new BreakfastResponse(
+      breakfast.Id,
+      breakfast.Name,
+      breakfast.Description,
+      breakfast.StartDate,
+      breakfast.EndDate,
+      breakfast.LastUpdated,
+      breakfast.Savory,
+      breakfast.Sweet
+    );
+
+    return Ok(response);
   }
 
   [HttpPut("{id:guid}")]

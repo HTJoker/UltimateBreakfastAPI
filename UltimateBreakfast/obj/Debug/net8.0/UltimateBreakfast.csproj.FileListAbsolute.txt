@@ -27,3 +27,4 @@
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast/obj/Debug/net8.0/UltimateBreakfast.pdb
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast/obj/Debug/net8.0/UltimateBreakfast.genruntimeconfig.cache
 /Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast/obj/Debug/net8.0/ref/UltimateBreakfast.dll
+/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast/obj/Debug/net8.0/UltimateBreakfast.sourcelink.json
