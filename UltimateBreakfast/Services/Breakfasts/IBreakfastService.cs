@@ -1,4 +1,3 @@
-using UltimateBreakfast.Contracts.Breakfast;
 using UltimateBreakfast.Models;
 
 namespace UltimateBreakfast.Services.Breakfasts;
@@ -6,5 +5,5 @@ namespace UltimateBreakfast.Services.Breakfasts;
 public interface IBreakfastService
 {
   void CreateBreakfast(Breakfast breakfast);
-    Breakfast GetBreakfast(Guid id);
+  Breakfast GetBreakfast(Guid id);
 }
