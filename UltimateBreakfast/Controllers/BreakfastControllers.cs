@@ -1,6 +1,8 @@
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using UltimateBreakfast.Contracts.Breakfast;
 using UltimateBreakfast.Models;
+using UltimateBreakfast.ServiceErrors;
 using UltimateBreakfast.Services.Breakfasts;
 
 namespace UltimateBreakfast.Controllers;
@@ -43,8 +45,14 @@ public class BreakfastController(IBreakfastService breakfastService) : Controlle
   [HttpGet("{id:guid}")]
   public IActionResult GetBreakfast(Guid id)
   {
-    Breakfast breakfast = _breakfastService.GetBreakfast(id);
+    ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
 
+    if (getBreakfastResult.IsError && getBreakfastResult.FirstError == Errors.Breakfast.NotFound)
+    {
+      return NotFound();
+    }
+
+    var breakfast = getBreakfastResult.Value;
     var response = new BreakfastResponse(
       breakfast.Id,
       breakfast.Name,
@@ -62,13 +70,28 @@ public class BreakfastController(IBreakfastService breakfastService) : Controlle
   [HttpPut("{id:guid}")]
   public IActionResult UpsertBreakfast(Guid id, UpsertBreakfastRequest request)
   {
-    return Ok(request);
+    var breakfast = new Breakfast(
+      Guid.NewGuid(),
+      request.Name,
+      request.Description,
+      request.StartDate,
+      request.EndDate,
+      DateTime.UtcNow,
+      request.Savory,
+      request.Sweet
+    );
+
+    _breakfastService.UpsertBreakfast(breakfast);
+
+    //TODO: return new breakfast if created, or no content if updated
+    return NoContent();
   }
 
   [HttpDelete("{id:guid}")]
   public IActionResult DeleteBreakfast(Guid id)
   {
-    return Ok(id);
+    _breakfastService.DeleteBreakfast(id);
+    return NoContent();
   }
 
 }

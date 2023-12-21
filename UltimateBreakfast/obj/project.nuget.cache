@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HQDR17WNjNsIH2/CfLBQxkrYL47LUNABrb8XLNaCrp9IwhZPCdpEFU8Bns782d/bET96DYOA+y7XhV0qzWeNng==",
+  "dgSpecHash": "Br49QOn41XXoraA3y1hT2mtXTgqfPa1eWQxaY1KE1glCpsmxRjwpNsP+PYGM3dsLTlq9iHrNKv9HYTNMnmegcQ==",
   "success": true,
   "projectFilePath": "/Users/hersh/Desktop/Projects/Coding/C#/api_practise/UltimateBreakfast/UltimateBreakfast/UltimateBreakfast.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/hersh/.nuget/packages/erroror/1.3.0/erroror.1.3.0.nupkg.sha512"
+  ],
   "logs": []
 }
