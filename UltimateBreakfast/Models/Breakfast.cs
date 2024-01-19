@@ -11,7 +11,8 @@ public class Breakfast(
   DateTime endDate,
   DateTime lastUpdated,
   List<string> savory,
-  List<string> sweet)
+  List<string> sweet
+  )
 {
   public const int MinNameLength = 3;
   public const int MaxNameLength = 50;
@@ -34,7 +35,9 @@ public class Breakfast(
     DateTime startDate,
     DateTime endDate,
     List<string> savory,
-    List<string> sweet)
+    List<string> sweet,
+    Guid? id = null
+    )
   {
     if (name.Length < MinNameLength || name.Length > MaxNameLength)
     {
@@ -47,13 +50,14 @@ public class Breakfast(
     }
 
     return new Breakfast(
-      Guid.NewGuid(),
+      id ?? Guid.NewGuid(),
       name,
       description,
       startDate,
       endDate,
       DateTime.UtcNow,
       savory,
-      sweet);
+      sweet
+      );
   }
 }

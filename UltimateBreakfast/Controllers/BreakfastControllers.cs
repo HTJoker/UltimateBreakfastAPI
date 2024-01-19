@@ -15,34 +15,27 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
   [HttpPost()]
   public IActionResult CreateBreakfast(CreateBreakfastRequest request)
   {
-    var breakfast = new Breakfast(
-      Guid.NewGuid(),
+    ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
       request.Name,
       request.Description,
       request.StartDate,
       request.EndDate,
-      DateTime.UtcNow,
       request.Savory,
       request.Sweet
     );
 
-    _breakfastService.CreateBreakfast(breakfast);
+    if (requestToBreakfastResult.IsError)
+    {
+      return Problem(requestToBreakfastResult.Errors);
+    }
 
-    var response = new BreakfastResponse(
-      breakfast.Id,
-      breakfast.Name,
-      breakfast.Description,
-      breakfast.StartDate,
-      breakfast.EndDate,
-      breakfast.LastUpdated,
-      breakfast.Savory,
-      breakfast.Sweet
-    );
+    var breakfast = requestToBreakfastResult.Value;
 
     ErrorOr<Created> createBreakfastResult = _breakfastService.CreateBreakfast(breakfast);
     return createBreakfastResult.Match(
       created => CreatedAtGetBreakfast(breakfast),
-      errors => Problem(errors));
+      errors => Problem(errors)
+      );
   }
 
 
@@ -61,16 +54,22 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
   [HttpPut("{id:guid}")]
   public IActionResult UpsertBreakfast(Guid id, UpsertBreakfastRequest request)
   {
-    var breakfast = new Breakfast(
-      Guid.NewGuid(),
+    ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
       request.Name,
       request.Description,
       request.StartDate,
       request.EndDate,
-      DateTime.UtcNow,
       request.Savory,
-      request.Sweet
+      request.Sweet,
+      id
     );
+
+    if (requestToBreakfastResult.IsError)
+    {
+      return Problem(requestToBreakfastResult.Errors);
+    }
+
+    var breakfast = requestToBreakfastResult.Value;
 
     ErrorOr<UpsertedBreakfast> upsertedResult = _breakfastService.UpsertBreakfast(breakfast);
 
